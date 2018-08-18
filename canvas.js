@@ -40,6 +40,20 @@ function fillCell(grid) {
   c.fillRect(rnd(cols) * (side + gap), rnd(rows) * (side + gap), side, side);
 }
 
+function fullCircle() {
+  let x = 300;
+  let y = 300;
+  let rad = 50;
+  let start = 0;
+  let stop = Math.PI * 2;
+
+  // for (let i = 0; i <= Math.PI * 2 + 10; i++) {
+    c.beginPath();
+    c.arc(x, y, rad, start, stop, false);
+    c.stroke();
+  // }
+}
+
 function perf(func, times = 10000) {
   let stop;
   let start = Date.now();
