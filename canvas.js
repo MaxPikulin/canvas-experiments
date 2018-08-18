@@ -15,10 +15,11 @@ function randRect() {
 }
 
 function fillGridRnd(grid) {
-  let cols = 1500;
-  let rows = 900;
-  let side = 1;
-  let gap = 0;
+  let side = 10;
+  let gap = 1;
+  let cols = window.innerWidth / (side + gap) + 1;//1500;
+  let rows = window.innerHeight / (side + gap) + 1;// 900;
+  // console.log(cols, rows);
   let opacity = 0.5;
   for (let y = 0; y < rows; y++) {
     for (let x = 0; x < cols; x++) {
@@ -26,6 +27,17 @@ function fillGridRnd(grid) {
       c.fillRect(x * (side + gap), y * (side + gap), side, side);
     }
   }
+}
+
+function fillCell(grid) {
+  let side = 10;
+  let gap = 1;
+  let cols = window.innerWidth / (side + gap) + 1;//1500;
+  let rows = window.innerHeight / (side + gap) + 1;// 900;
+  // console.log(cols, rows);
+  let opacity = 0.5;
+  c.fillStyle = rndColour(opacity);
+  c.fillRect(rnd(cols) * (side + gap), rnd(rows) * (side + gap), side, side);
 }
 
 function perf(func, times = 10000) {
